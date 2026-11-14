@@ -449,6 +449,7 @@ canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:non
 
 /* v9: no info box during play; tap-to-fix hotspots and their overlays */
 #fact{display:none!important}
+.holding .target{z-index:7}
 .item[data-item="gloves"]:not(.dragging):not(.placed) img{clip-path:inset(0 0 36% 0)}
 .port .gbody{justify-content:center!important;gap:2rem}
 .port .checklist{margin-top:0!important}
@@ -543,9 +544,9 @@ canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:non
           <circle cx="1469" cy="428" r="4" fill="#111"/><path d="M1460 452c0-10 4-18 9-18s9 8 9 18z" fill="#111"/>
           <g class="ov ov-centrifuge">
             <g class="ov-on">
-              <path d="M922 503v8q0 6 6 6" fill="none" stroke="#222" stroke-width="3"/>
-              <rect x="917" y="488" width="11" height="10" rx="1.5" fill="#222"/>
-              <circle cx="935" cy="490" r="2.6" fill="#ff3b30"/><circle cx="935" cy="490" r="5.5" fill="#ff3b30" opacity=".3"/>
+              <path d="M845 497C845 530 872 524 887 549" fill="none" stroke="#1d1f21" stroke-width="3.2" stroke-linecap="round"/>
+              <rect x="839.5" y="485" width="11" height="12" rx="2" fill="#1d1f21"/>
+              <circle cx="830" cy="486.5" r="2.2" fill="#ff3b30"/><circle cx="830" cy="486.5" r="5" fill="#ff3b30" opacity=".3"/>
               <path d="M893 520L899 452Q938 444 977 452L983 520Z" fill="#e9ecec" stroke="#b9bfc2" stroke-width="1.5"/>
               <path d="M905 512L909 462Q938 456 967 462L971 512Z" fill="none" stroke="#c4cacc" stroke-width="3"/>
               <rect x="886" y="517" width="104" height="21" rx="5" fill="#eef0f0" stroke="#c8cdd0" stroke-width="1"/>
@@ -555,7 +556,9 @@ canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:non
               <rect x="922" y="543" width="30" height="11" rx="1.5" fill="#0d2614"/>
               <text class="ov-blink" x="937" y="552" text-anchor="middle" font-family="Consolas,Courier New,monospace" font-size="9.5" font-weight="700" fill="#4dff7a">02:30</text>
             </g>
-            <g class="ov-off"><rect x="922" y="543" width="30" height="11" rx="1.5" fill="#2b3135"/></g>
+            <g class="ov-off"><rect x="922" y="543" width="30" height="11" rx="1.5" fill="#2b3135"/>
+              <path d="M887 556C880 566 876 576 866 580" fill="none" stroke="#1d1f21" stroke-width="3.2" stroke-linecap="round"/>
+              <rect x="864" y="575" width="13" height="8" rx="2" fill="#1d1f21"/></g>
           </g>
           <g class="ov ov-faucet">
             <g class="ov-on">
@@ -813,7 +816,7 @@ const ICO_INFO='<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="n
 /* ---------- places in the photo (image pixels) ---------- */
 const TARGETS={
   infectious:{x:200,y:650,w:106,h:186,label:'الحاوية الصفراء'},
-  general:{x:306,y:650,w:100,h:186,label:'الحاوية الزرقاء'},
+  general:{x:306,y:650,w:100,h:186,label:'الحاوية الزرقاء',pos:'bottom'},
   sharps:{x:494,y:505,w:82,h:84,label:'صندوق الأدوات الحادة'},
   rack:{x:580,y:530,w:84,h:56,label:'حامل الأنابيب',pos:'bottom'},
   pipstand:{x:756,y:492,w:66,h:96,label:'حامل الماصات'},

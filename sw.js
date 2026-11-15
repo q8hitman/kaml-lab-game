@@ -1,7 +1,7 @@
 // Offline support for Lab Inspector Challenge.
 // Everything the game needs is saved on the first visit, so it keeps working with no internet.
 // Bump VERSION whenever any file changes, so devices pick up the new game.
-const VERSION = 'lic-v2';
+const VERSION = 'lic-v3';
 const FONTS = ['IBMPlexSansArabic-400', 'IBMPlexSansArabic-500', 'IBMPlexSansArabic-600', 'IBMPlexSansArabic-700',
   'ReemKufi-500', 'ReemKufi-600', 'ReemKufi-700'];
 const FILES = [
